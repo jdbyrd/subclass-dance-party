@@ -1,15 +1,18 @@
 body, html{
   height:100%;
 }
+
 body{
   margin: 0px;
-  width: 80%;
+  width: 100%;
+  height: 500px;
   background-color:#444;
   background-image: url('./src/floor.jpg');
   background-repeat: no-repeat;
   background-position: center; 
   font-size: 18px;
 }
+
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
@@ -17,14 +20,18 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
+
 .topbar{
   height:32px;
-  width: 120%;
+  width: 80%;
+  margin: auto;
   background-color: #555;
 }
+
 .title{
   background-color: #777;
 }
+
 .dancer{
   border-radius:10px;
   position:absolute;
@@ -33,4 +40,12 @@ body, a:link, a:visited, a:active{
 .inner {
   margin: 3em;
   width: 70%;
+}
+
+img{
+  height: 250px;
+}
+
+.john {
+  height: 40%;
 }

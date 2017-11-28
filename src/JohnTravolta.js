@@ -3,6 +3,9 @@ var JohnTravolta = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.step();
   this.movement = 'right';
+  this.$node.addClass("john");
+  this.$node.attr('src','./src/John.gif');
+  this.interval = setInterval(this.move.bind(this), 5);
 };
 
 JohnTravolta.prototype = Object.create(makeDancer.prototype);
@@ -15,7 +18,7 @@ JohnTravolta.prototype.move = function() {
     this.$node.css({
       left: this.left++
     });
-    if(this.left > width){
+    if(this.left > width-399){
       this.movement = 'left';
     }
   } 
@@ -24,17 +27,20 @@ JohnTravolta.prototype.move = function() {
     this.$node.css({
       left: this.left--
     });
-    if(this.left < 0){
+    if(this.left < 175){
       this.movement = 'right';
     }
   }
 
 };
 
-JohnTravolta.prototype.step = function() {
-  makeDancer.prototype.step.call(this);
-  this.$node.attr('src','./src/John.gif');
-  setInterval(this.move.bind(this), 1);
-  //this.$node.toggle();
+JohnTravolta.prototype.stopInterval = function() {
+  clearInterval(this.interval);
 };
+
+// JohnTravolta.prototype.step = function() {
+//   makeDancer.prototype.step.call(this);
+
+//   //this.$node.toggle();
+// };
 

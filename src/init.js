@@ -24,16 +24,53 @@ $(document).ready(function() {
 
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $("body").width() * Math.random() /2 + 50,
       Math.random() * 1000
     );
-    $('.inner').append(dancer.$node);
+    $("body").append(dancer.$node);
     window.dancers.push(dancer.$node);
   });
   
   $('.lineUpDancers').on('click', function() {
     window.dancers.forEach(function(dancer){
       dancer.css({top: 300});
+    });
+  });
+  
+  $('.cleanUpDancers').on('click', function() {
+    var start = 200;
+    let node = $('<img class="dancer"></img>').attr('src','./src/fire.png');
+    node.css({
+      top: $("body").height()/2+100, 
+      left: start
+    });
+    $('body').append(node);
+    
+    JohnTravolta.prototype.stopInterval();
+    
+    // while(parseInt(node.css('left')) < $('body').width()){
+    setInterval(function(){
+      node.css({
+        left: start
+      });
+      
+      var current = parseInt($('.dancer').css('left'));
+      
+      $('.dancer').css({
+        left: current + 5
+      })
+      start+=5;
+      
+    }, 1);
+    // }
+    window.dancers.forEach(function(dancer){
+      setInterval(function(){
+      dancer.css({
+        left: start
+      });
+      start+=5;
+      
+    }, 1);
     });
   });
   
