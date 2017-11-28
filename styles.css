@@ -3,7 +3,11 @@ body, html{
 }
 body{
   margin: 0px;
+  width: 80%;
   background-color:#444;
+  background-image: url('./src/floor.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -15,13 +19,18 @@ body, a:link, a:visited, a:active{
 }
 .topbar{
   height:32px;
+  width: 120%;
   background-color: #555;
 }
 .title{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+
+.inner {
+  margin: 3em;
+  width: 70%;
 }
